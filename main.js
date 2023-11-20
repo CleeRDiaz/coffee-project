@@ -47,6 +47,55 @@ const coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
+// Select the relevant elements
+const addCoffeeButton = document.querySelector("#button-addon2");
+const roastSelectionNew = document.querySelector("#roast-selection-new");
+const addCoffeeInput = document.querySelector("#addCoffee");
+
+// Event listener for the "ADD!" button
+addCoffeeButton.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the default submission
+
+    // Get the selected roast and coffee name from the form
+    const selectedRoast = roastSelectionNew.value;
+    const coffeeName = addCoffeeInput.value;
+
+    // Validate the input
+    if (!selectedRoast || selectedRoast === "all") {
+        alert("Please select a valid roast.");
+        return;
+    }
+
+    if (!coffeeName.trim()) {
+        alert("Please enter a non-empty coffee name.");
+        return;
+    }
+
+    // If the coffee name already exists
+    if (coffees.some(coffee => coffee.name.trim().toLowerCase() === coffeeName.trim().toLowerCase())) {
+        alert("This coffee already exists. Please enter a unique name.");
+        return;
+    }
+
+    // Create a new coffee
+    const newCoffee = {
+        id: coffees.length + 1,
+        name: coffeeName,
+        roast: selectedRoast,
+    };
+
+    // Add the new coffee to the array
+    coffees.push(newCoffee);
+
+    // Update the displayed coffees
+    tbody.innerHTML = renderCoffees(coffees);
+
+    // Clear the form inputs
+    addCoffeeInput.value = "";
+
+    //test success message
+    alert("Coffee added successfully!");
+});
 
 const tbody = document.querySelector('#coffees');
 const submitButton = document.querySelector('#submit');
@@ -55,3 +104,4 @@ const roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
