@@ -1,0 +1,122 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD7AB;
+}
+
+/*-----navbar START-----*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+}
+/*Ensures each nav-item takes up the same amount of space within the width and centers them vertically*/
+.nav-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+/*Align the first div to the leftmost side*/
+.nav-item:first-child {
+    margin-right: auto;
+}
+/*Align the second div to the center*/
+.nav-item:nth-child(2) {
+    justify-content: center;
+}
+/*Align the third div to the rightmost side*/
+.nav-item:nth-child(3) {
+    justify-content: flex-end
+}
+/*Change icon color and size*/
+nav i {
+    font-size: 30px;
+    color: #FFFFFF;
+    padding: 10px;
+}
+/*Change "Coffee House" to white*/
+nav h1 {
+    color: white;
+    margin: 0;
+}
+/*Removes hyperlink for anchor and change color*/
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 16px 14px;
+}
+/*Change anchor color upon mouse hover*/
+nav a:hover {
+    color: #FFD7AB;
+}
+/*-----navbar END-----*/
+
+/*Container for forms*/
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    padding: 15px;
+    background-color: #5B545F;
+}
+
+#roast-buttons {
+    display: flex;
+    justify-content: center;
+}
+/*Removes background so that buttons uses form bg and adds spacing*/
+#roast-buttons .roast-button {
+    background: none;
+    border: none;
+    padding: 40px;
+    cursor: pointer;
+}
+
+/* Adjust the positioning of the <p> element inside the .roast-button */
+.roast-button {
+    position: relative;
+}
+
+#roast-buttons .roast-button p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#roast-buttons img {
+    width: 200px; /*Set the width of the images*/
+    height: 200px; /*Set the height of the images*/
+    border-radius: 50%; /*Make the images circular*/
+}
+
+#roast-buttons img:hover {
+    transform: scale(1.2); /* Zoom in slightly on hover */
+}
+
+/* Add the table styles */
+table {
+    border-collapse: collapse;
+    margin: 15px 0;
+    border: 1px solid black; /* Add this line for the table border */
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+/* Style for coffee boxes */
+.coffee {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
