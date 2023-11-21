@@ -27,21 +27,6 @@ function renderCoffees(coffees) {
     updateCoffeeList(coffees);
 }
 
-// function updateCoffees(e) {
-//     e.preventDefault();
-//
-//     // Get the selected roast from the clicked button's id, or default to 'all' for form submission
-//     let selectedRoast = e.target.id !== 'submit' ? e.target.id : 'all';
-//     let searchQuery = coffeeSearch.value.toLowerCase();
-//
-//     let filteredCoffees = coffees.filter(coffee => {
-//         return (selectedRoast === 'all' || coffee.roast === selectedRoast) &&
-//             (searchQuery === '' || coffee.name.toLowerCase().includes(searchQuery));
-//     });
-//
-//     renderCoffees(filteredCoffees);
-// }
-
 function updateCoffeeList(coffees) {
     let coffeeList = document.getElementById('coffee-list');
     coffeeList.innerHTML = '';
