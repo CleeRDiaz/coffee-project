@@ -2,7 +2,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FFD7AB;
+    background-color: #5B545F;
 }
 
 /*-----navbar START-----*/
@@ -34,7 +34,7 @@ nav {
 nav i {
     font-size: 30px;
     color: #FFFFFF;
-    padding: 10px;
+    padding: 2px;
 }
 /*Change "Coffee House" to white*/
 nav h1 {
@@ -61,7 +61,7 @@ nav a:hover {
 
 form {
     padding: 15px;
-    background-color: #5B545F;
+    background-color: #FFD7AB;
 }
 
 #roast-buttons {
@@ -75,7 +75,6 @@ form {
     padding: 40px;
     cursor: pointer;
 }
-
 /* Adjust the positioning of the <p> element inside the .roast-button */
 .roast-button {
     position: relative;
@@ -90,33 +89,81 @@ form {
     color: white;
     font-size: 30px;
     font-weight: bold;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
 }
 
 #roast-buttons img {
-    width: 200px; /*Set the width of the images*/
-    height: 200px; /*Set the height of the images*/
+    width: 200px;
+    height: 200px;
     border-radius: 50%; /*Make the images circular*/
 }
 
 #roast-buttons img:hover {
-    transform: scale(1.2); /* Zoom in slightly on hover */
+    transform: scale(1.2); /* Zoom in on hover */
 }
 
-/* Add the table styles */
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-    border: 1px solid black; /* Add this line for the table border */
+/*Ensures div is not covered by bottom row*/
+#coffees {
+    margin-bottom: 70px;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
+/*positioning and style for the bottom row*/
+.bottom-row {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
 }
+
+#addCoffeeForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+}
+
+#bottom-text {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 /* Style for coffee boxes */
 .coffee {
-    border: 1px solid black;
+    position: relative;
+    border: 5px solid black;
     padding: 10px;
     margin: 10px;
-    display: inline-block;
+    background-color: #FFD7AB;
+    height: 150px;
+    width: 250px;
+    border-radius: 50px;
+    display: inline-flex;
+}
+
+.coffee-name {
+    position: absolute; /* Set position to absolute */
+    top: 50%; /*same as roast-buttons*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.coffee-roast {
+    position: absolute; /* set the position of the circle */
+    top: -10px;
+    right: -15px;
+    display: flex; /*aligns the text within the circle*/
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #71CFB8;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: bolder;
 }

@@ -1,25 +1,30 @@
 "use strict";
-
+(function() {
 function renderCoffee(coffee) {
     let coffeeDiv = document.createElement('div');
     coffeeDiv.classList.add('coffee');
 
     let nameDiv = document.createElement('div');
     nameDiv.textContent = coffee.name;
+    nameDiv.classList.add('coffee-name'); // Add a class for the coffee name for styling purposes
     coffeeDiv.appendChild(nameDiv);
 
     let roastDiv = document.createElement('div');
     roastDiv.textContent = coffee.roast;
+    roastDiv.classList.add('coffee-roast'); // Add a class for the coffee roast for styling purposes
     coffeeDiv.appendChild(roastDiv);
 
     return coffeeDiv;
 }
 
 function renderCoffees(coffees) {
+    // Sort the coffees array by id in ascending order
+    coffees.sort((a, b) => a.id - b.id);
+
     let coffeeContainer = document.getElementById('coffees');
     coffeeContainer.innerHTML = '';
 
-    for (let i = coffees.length - 1; i >= 0; i--) {
+    for (let i = 0; i < coffees.length; i++) {
         coffeeContainer.appendChild(renderCoffee(coffees[i]));
     }
 
@@ -123,3 +128,5 @@ submitButton.addEventListener('click', function (e) {
 
 // Initial rendering of coffees
 renderCoffees(coffees);
+
+})();

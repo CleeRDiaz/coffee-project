@@ -23,9 +23,9 @@
         <h1>Coffee House</h1>
     </div>
     <div class="nav-item search-form" id="search-form">
-        <i class="bi bi-person-circle"></i>
-        <i class="bi bi-cart-fill"></i>
-        <i class="bi bi-search"></i>
+        <a href="profile.html"><i class="bi bi-person-circle"></i></a>
+        <a href="cart.html"><i class="bi bi-cart-fill"></i></a>
+        <a href="search.html"><i class="bi bi-search"></i></a>
         <input id="coffee-search" list="coffee-list" placeholder="Enter coffee name" type="text">
         <datalist id="coffee-list">
             <!-- Dynamically populate the datalist with coffee names -->
@@ -35,7 +35,7 @@
 </nav>
 
 <div class="container">
-    <div class="top-column">
+    <div class="top-row">
         <form id="searchForm">
             <div id="roast-buttons">
                 <button class="roast-button" id="all" onclick="updateAndRenderCoffees('all', '')">
@@ -58,17 +58,15 @@
         </form>
     </div>
     <div class="table-container" id="coffees"></div>
-    <div class="bottom-column">
+    <div class="bottom-row">
         <form id="addCoffeeForm">
-            <div>
-                <label for="newCoffeeRoast">Roast:</label>
+            <div id="bottom-text">
+                <label for="newCoffeeRoast">Don't see your Coffee Here? Let us know: Roast:</label>
                 <select id="newCoffeeRoast" required>
                     <option value="light">Light</option>
                     <option value="medium">Medium</option>
                     <option value="dark">Dark</option>
                 </select>
-            </div>
-            <div>
                 <label for="newCoffeeName">Coffee Name:</label>
                 <input id="newCoffeeName" placeholder="Enter coffee name" required type="text">
                 <button type="submit">Add Coffee</button>
