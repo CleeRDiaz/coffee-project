@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+  <title>The Coffee House LLC</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+  <h1>Freshly Roasted</h1>
+
+  <!-- Roast Selection Menu -->
+  <div class="row m-2">
+    <div class="col">
+      <div class="select-box">
+        <div class="select-option">
+          <input type="text" placeholder="Select Roast" id="soValue" readonly name="">
+        </div>
+        <div class="content">
+          <div class="search">
+            <input type="text" id="optionSearch" placeholder="Search" name="">
+          </div>
+          <ul class="options">
+            <li>Light</li>
+            <li>Medium</li>
+            <li>Dark</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Name Selection Menu -->
+  <div class="row m-2">
+    <div class="col">
+      <!-- Moved coffee-display div to the new container -->
+      <div class="coffee-names-container">
+        <h2>Coffee Name Selection</h2>
+        <div class="coffee-display">
+          <div id="coffeeNames"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Order Card -->
+  <div class="row m-2">
+    <div class="col">
+      <div class="order menu">
+        <div class="order-card" id="orderCard" style="display: none;">
+          <img src="alt%20coffee%20-diaz/cup.jpg" alt="Cup Image" style="width: 50px; height: 50px;">
+          <input type="text" placeholder="Enter Your Name" id="customerName" required>
+          <button onclick="processOrder()">Submit Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coffee Order Display -->
+  <div id="coffeeOrder" style="display: none;">
+    <p id="orderedCoffee"></p>
+    <h1>Excellent Choice, your order will be right out.</h1>
+    <label for="customerName">Name:</label>
+    <input type="text" id="customerName" placeholder="Enter your name">
+    <button id="submitOrder">Submit Order</button>
+  </div>
+
+  <!-- Final Confirmation Display -->
+  <div id="finalConfirmation" style="display: none;">
+    <h1>Would you like to add another cup?</h1>
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+  </div>
+
+  <!-- Enjoy Message Display -->
+  <div id="enjoyMessage" style="display: none;">
+    <h1>Enjoy your Coffee!</h1>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
