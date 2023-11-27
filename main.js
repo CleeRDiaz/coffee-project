@@ -97,24 +97,22 @@ let coffees = [
 
 // Your existing event listeners and initial rendering
 const roastButtons = document.getElementById('roast-buttons');
+    roastButtons.addEventListener('click', handleButtonClick);
 const coffeeSearch = document.querySelector('#coffee-search');
-const submitButton = document.getElementById('submit');
-const addCoffeeForm = document.getElementById('addCoffeeForm');
-
-addCoffeeForm.addEventListener('submit', addNewCoffee);
-roastButtons.addEventListener('click', handleButtonClick);
-coffeeSearch.addEventListener('input', function (e) {
-    let searchQuery = e.target.value.toLowerCase();
-    updateAndRenderCoffees('all', searchQuery);
+    coffeeSearch.addEventListener('input', function (e) {
+        let searchQuery = e.target.value.toLowerCase();
+        updateAndRenderCoffees('all', searchQuery);
     });
-submitButton.addEventListener('click', function (e) {
-    e.preventDefault();
-    let searchQuery = coffeeSearch.value.toLowerCase();
-    updateAndRenderCoffees('all', searchQuery);
-    // Reset the coffee search input
-    coffeeSearch.value = '';
-});
-
+const submitButton = document.getElementById('submit');
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        let searchQuery = coffeeSearch.value.toLowerCase();
+        updateAndRenderCoffees('all', searchQuery);
+        // Reset the coffee search input
+        coffeeSearch.value = '';
+    });
+const addCoffeeForm = document.getElementById('addCoffeeForm');
+    addCoffeeForm.addEventListener('submit', addNewCoffee);
 // Initial rendering of coffees
 renderCoffees(coffees);
 })();
