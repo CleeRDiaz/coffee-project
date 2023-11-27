@@ -1,0 +1,229 @@
+body {
+    font-size: 16px;
+    margin: 0;
+    background: #f8f9fa; /* Lighter grey background */
+    color: #495057; /* Darker text color */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align content vertically */
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.select-box {
+    width: 380px;
+    margin-bottom: 20px; /* Adjusted margin between menus */
+    position: relative;
+    background: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+}
+
+.select-option {
+    position: relative;
+}
+
+.select-option input {
+    width: 100%;
+    color: #495057; /* Darker text color */
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px; /* Slightly smaller font size */
+    padding: 15px 20px;
+    border: 1px solid #ced4da; /* Light border color */
+    outline: 0;
+}
+
+.select-option:after {
+    content: "";
+    border-top: 8px solid #495057; /* Darker arrow color */
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -4px;
+}
+
+.content {
+    background-color: #fff;
+    position: absolute;
+    color: #495057; /* Darker text color */
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 100%;
+    z-index: 999;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Slightly larger box shadow */
+}
+
+.search input {
+    width: 100%;
+    font-size: 16px; /* Slightly smaller font size */
+    padding: 15px;
+    outline: 0;
+    border: 1px solid #ced4da; /* Light border color */
+    border-radius: 5px;
+}
+
+.options {
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.options li {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 18px; /* Slightly larger font size */
+    cursor: pointer;
+    border-bottom: 1px solid #ced4da; /* Light border color */
+}
+
+.options li:hover {
+    background-color: #f2f2f2;
+}
+
+.select-box.active .content {
+    display: block;
+}
+
+.select-box.active .select-option:after {
+    transform: rotate(-180deg);
+}
+
+.coffee-display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.coffee-display button {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #80482b; /* Primary button color */
+    color: #fff; /* White text color */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.coffee-display button:hover {
+    background-color: #693823; /* Darker color on hover */
+    color: #fffc79; /* White text color */
+}
+
+.coffee-names-container {
+    /*border: 2px solid #ced4da; !* Light border color *!*/
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Add padding for spacing */
+    margin-top: 20px; /* Adjusted margin from the top */
+}
+
+/* Additional styles for cup card and order summary */
+
+.order.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    margin-bottom: 20px; /* Adjusted margin between menus */
+}
+
+#orderedCoffee {
+    font-size: 20px;
+    color: sienna;
+}
+
+.cup-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    padding: 20px;
+    margin-bottom: 20px; /* Adjusted margin between menus */
+}
+
+.cup-card img {
+    width: 50px; /* Adjust the width of the cup image */
+    margin-bottom: 10px;
+}
+
+.owner-name-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da; /* Light border color */
+}
+
+.submit-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Primary button color */
+    color: #fff; /* White text color */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    padding: 20px;
+    margin-bottom: 20px; /* Adjusted margin between menus */
+}
+
+.order-summary h1 {
+    color: #007bff; /* Primary button color */
+}
+
+.toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.toggle-container label {
+    margin-bottom: 10px;
+}
+
+.toggle-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Primary button color */
+    color: #fff; /* White text color */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.toggle-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
