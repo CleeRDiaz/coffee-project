@@ -103,6 +103,10 @@ const addCoffeeForm = document.getElementById('addCoffeeForm');
 
 addCoffeeForm.addEventListener('submit', addNewCoffee);
 roastButtons.addEventListener('click', handleButtonClick);
+coffeeSearch.addEventListener('input', function (e) {
+    let searchQuery = e.target.value.toLowerCase();
+    updateAndRenderCoffees('all', searchQuery);
+    });
 submitButton.addEventListener('click', function (e) {
     e.preventDefault();
     let searchQuery = coffeeSearch.value.toLowerCase();
